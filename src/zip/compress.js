@@ -21,7 +21,7 @@ export const compress = async () => {
             gzip,
             writable
         );
-        console.log("Compress accomplished!");
+        console.log("Compress done!");
     } catch (error) {
         console.error('\x1b[31m', 'Compress failed with error:', error);
     }

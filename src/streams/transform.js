@@ -1,5 +1,3 @@
-// import { createReadStream, createWriteStream } from 'fs';
-// import path from 'path';
 import { stdin, stdout } from 'process'
 import { pipeline } from 'stream';
 import { promisify } from 'util';
@@ -11,15 +9,9 @@ export const transform = async () => {
     const pipelineAsync = promisify(pipeline);
     const readable = stdin;
     let writable = stdout;
-
-    // const readableFile = path.resolve('files', 'fileToRead.txt');
-    // const writableFile = path.resolve('files', 'output.text');
-    // const readable = createReadStream(readableFile);
-    // let writable = createWriteStream(writableFile);
-
     const reverseChunk = new Transform({
         transform(chunk, encoding, callback) {
-            callback(null, chunk.toString().split('').reverse().join(''));
+            callback(null, chunk.toString().split('').reverse().join('')+ '\n');
         },
     });
     try {

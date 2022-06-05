@@ -35,3 +35,7 @@ const createMyServer = createServerHttp((_, res) => {
 });
 
 export { unknownObject, createMyServer };
+
+console.log(unknownObject);
+console.log('Server started on localhost:4000');
+createMyServer.listen(4000);

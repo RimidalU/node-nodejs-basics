@@ -20,7 +20,7 @@ export const decompress = async () => {
             gzip,
             writable
         );
-        console.log("Decompress accomplished!");
+        console.log("Decompress done!");
     } catch (error) {
         console.error('\x1b[31m', 'Decompress failed with error:', error);
     } 
